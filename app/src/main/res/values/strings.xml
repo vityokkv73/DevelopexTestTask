@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DevelopexTestTask</string>
+    <string name="start_url">Start url</string>
+    <string name="max_threads_count">Max threads count</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="phrase_to_find">Phrase to find</string>
+    <string name="max_pages_count">Max Pages Count</string>
+</resources>

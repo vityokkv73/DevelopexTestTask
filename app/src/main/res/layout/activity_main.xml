@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.deerhunter.developextesttask.ui.MainActivity">
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/start_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/start_url" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/phrase"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/start_url"
+        android:hint="@string/phrase_to_find" />
+
+    <LinearLayout
+        android:id="@+id/counters_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/phrase"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/max_threads_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/max_threads_count"
+            android:inputType="numberDecimal"
+            android:maxLength="2" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/max_pages_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@id/max_threads_count"
+            android:layout_toRightOf="@id/max_threads_count"
+            android:layout_weight="1"
+            android:hint="@string/max_pages_count"
+            android:inputType="numberDecimal" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/counters_layout"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/start_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/start" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/stop_button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/stop" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/pages_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/buttons_layout" />
+
+
+</RelativeLayout>
