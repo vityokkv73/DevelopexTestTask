@@ -52,8 +52,8 @@ public class MainViewPresenter extends MvpBasePresenter<MainView> implements Pag
 
         try {
             maxThreadsCount = Integer.parseInt(maxThreadCountText);
-            if (maxThreadsCount > 20) {
-                getView().showToast("Max threads count is 20");
+            if (maxThreadsCount < 1 || maxThreadsCount > 20) {
+                getView().showToast("Threads count should be in range [1..20]");
                 return false;
             }
         } catch (NumberFormatException ex) {
@@ -63,6 +63,10 @@ public class MainViewPresenter extends MvpBasePresenter<MainView> implements Pag
 
         try {
             maxPagesToScan = Integer.parseInt(maxPagesToScanText);
+            if (maxPagesToScan < 1) {
+                getView().showToast("Max pages to scan count should be > 0");
+                return false;
+            }
         } catch (NumberFormatException ex) {
             getView().showToast("Invalid max pages count");
             return false;
